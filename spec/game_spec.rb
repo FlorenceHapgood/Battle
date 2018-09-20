@@ -1,9 +1,9 @@
 require "game"
 
 describe Game do
-
+  let(:player_1) { double :player_class, :receive_damage => "Something" }
   let(:player_2) { double :player_class, :receive_damage => "Something" }
-  let(:game) { described_class.new }
+  let(:game) { described_class.new(player_1, player_2) }
 
   describe "#attack" do
     it "takes 10 points from a player" do
